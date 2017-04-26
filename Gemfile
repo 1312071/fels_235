@@ -13,8 +13,10 @@ gem "coffee-rails", "~> 4.2"
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
-gem "i18n"
+gem "bootstrap-sass", "3.3.6"
 gem "config"
+gem "i18n"
+gem "font-awesome-rails"
 
 group :development, :test do
 gem "sqlite3", "1.3.12"

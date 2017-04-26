@@ -1,2 +1,68 @@
 en:
-  application_name: "Fels235"
+  static_pages:
+    home:
+      title: "Home"
+      welcome: "Welcome to the E Learning Training"
+      homepage_info: "This is the home page for the"
+      app_name: "E Learning Training"
+      sign_up: "Sign up now"
+      education: "EDUCATION"
+      education_details: "Website for education"
+      introduction: "The world's most popular language learning platform is
+        now available for the classroom. Thousands of teachers are already using
+        it to enhance their lessons."
+      any_language: "Learn any language"
+      any_language_details: "We have high quality courses in more than
+        200 languages"
+      adaptive_learning: "Adaptive learning tech"
+      adaptive_learning_details: "Memrise uses clever science to adapt to your
+        personal learning style and performance. So you learn fast and never
+        forget!"
+      certified: "CERTIFIED"
+      certified_details: "Many course for internation exam"
+      time: "TIME"
+      time_details: "Flexible time"
+      hard_work: "HARD WORK"
+      hard_work_details: "Lorem ipsum dolor sit amet.."
+      learn_anything: "LEARN ANYTHING"
+      learn_anything_details: "Create your own courses of rich,
+        multimedia flashcards "
+      intro_logo: "E Learning logo"
+      services: "SERVICES"
+      services_details: "What we offer"
+      our_values: "Our Values"
+      mission: "MISSION: creative for life"
+      vision: "VISION: 1 billion users"
+    help:
+      faq_header: "Frequently Asked Questions"
+      question1: "Which English language level should I choose?"
+      question2: "How is my test result calculated?"
+      question3: "How much time do I need to finish the test?"
+      answer1: "Check the English language descriptors or take our free
+        English placement test (pre-test), a  quick 10-min adaptive English
+        grammar test. It will give you a recommendation which level you should
+        start with.  You also get an instant feedback how successful you are
+        after each testing block so you can change the level during the test if
+        you feel it is too easy or difficult."
+      answer2: "Your result is a percentage rate from all your successfully
+        answered questions"
+      answer3: "TrackTest English test for individuals does not have a time
+        limit so you can take it without time pressure. If you belong to the
+        specific company or school account, you might be required to complete
+        the test before the specific time."
+
+  layouts:
+    footer:
+      about: "About"
+      contact: "Contact"
+      faq: "FAQ"
+      message: "The project made by"
+      framgia: "Framgia"
+
+    header:
+      app_name: "E Learning Training"
+      home: "Home"
+      help: "Help"
+      log_in: "Log in"
+    application:
+      application_name: "Fels235"
