@@ -66,3 +66,18 @@ en:
       log_in: "Log in"
     application:
       application_name: "Fels235"
+
+  users:
+    new:
+      title: "Sign up"
+      btn_create: "Create new account"
+      confirmation: "Confirmation"
+      form_contains: "The form contains "
+      error: "error"
+    create:
+      signup_success: "Sign up successfully!"
+
+  shared:
+    error_messages:
+      form_contains: "The form contains "
+      error: "error"
