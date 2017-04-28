@@ -11,7 +11,6 @@ class Category < ApplicationRecord
     minimum: Settings.category.min_cate_name}, uniqueness: true
   validates :description, presence: true,
     length: {maximum: Settings.category.max_cate_desc}
-  validates :picture, presence: true
   validate :picture_size
 
   private

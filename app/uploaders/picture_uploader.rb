@@ -10,4 +10,9 @@ class PictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+  def default_url *args
+    "#{Rails.root}/app/assets/images/fallback/" +
+      [version_name, "default.png"].compact.join("_")
+  end
 end

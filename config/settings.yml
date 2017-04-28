@@ -15,3 +15,6 @@ category:
   max_cate_desc: 100
   valid_picture: "image/jpeg,image/gif,image/png"
   cate_per_page: 6
+word:
+  picture_size: 150
+  per_page: 20

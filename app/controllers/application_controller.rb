@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include UsersHelper
 
+  helper_method :find_answer
   def logged_in_user
     unless logged_in?
       flash[:danger] = t ".log_in"
