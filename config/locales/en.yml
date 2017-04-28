@@ -84,7 +84,10 @@ en:
       help: "Help"
       log_in: "Log in"
       account: "Account"
-      logout: "Logout"
+      profile: "Profile"
+      settings: "Settings"
+      words: "Words"
+      log_out: "Logout"
       categories: "Categories"
 
     application:
@@ -270,3 +273,25 @@ en:
       follow: "Follow"
       unfollow: "Unfollow"
       ago: "ago"
+  words:
+    index:
+      title: "Word List"
+      category: "Category"
+      search: "Search"
+      sort_by: "Sort by"
+      any: "- Any -"
+      filter: "Filter"
+    list:
+      reset_filter: "Reset filter"
+      pdf_export: "Export to PDF"
+      content: "Content"
+      meaning: "Meaning"
+      category: "Category"
+      created_at: "Created at"
+    sort_options:
+      created_at_asc: "Created date (oldest first)"
+      created_at_desc: "Created date (newest first)"
+      name_asc: "Name (a-z)"
+      category_name_asc: "Category (a-z)"
+  pdf:
+    time_default: "%m/%d/%Y-%H:%M"

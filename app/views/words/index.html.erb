@@ -22,6 +22,14 @@
     </div>
   <% end %>
 </div>
+<div class="well well-small">
+  <div class="pull-right" >
+    <%= link_to t(".reset_filter"), words_path, class: "btn btn-default btn-sm" %>
+    <%= link_to t(".pdf_export"), words_path(format: :pdf),
+      class: "btn btn-default btn-sm" %>
+  </div>
+  <%= page_entries_info @words %>
+</div>
 <table class="table">
   <tr>
     <th><%= t ".index" %></th>

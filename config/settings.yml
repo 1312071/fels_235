@@ -18,9 +18,8 @@ category:
   valid_picture: "image/jpeg,image/gif,image/png"
   cate_per_page: 6
 word:
-  picture_size: 150
+  picture_size: 100
   per_page: 20
-  picture_size: 200
   max_length_content: 200
 answer_count: 0
 answer_quanlity: 2
