@@ -205,3 +205,13 @@ footer {
 .item span {
   font-style: normal;
 }
+
+input {
+  height: auto !important;
+}
+
+input, textarea, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
