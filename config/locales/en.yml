@@ -64,6 +64,9 @@ en:
       home: "Home"
       help: "Help"
       log_in: "Log in"
+      account: "Account"
+      logout: "Logout"
+
     application:
       application_name: "Fels235"
 
@@ -81,3 +84,14 @@ en:
     error_messages:
       form_contains: "The form contains "
       error: "error"
+
+  sessions:
+    create:
+      login_success: "Login successfully!"
+      invalid: "Invalid email/password combination."
+    new:
+      title: "Login"
+      create_account: "Create new account "
+      sign_up: "Sign up"
+      remember_me: "Remember me"
+      log_in: "Please log in."

@@ -210,8 +210,21 @@ input {
   height: auto !important;
 }
 
-input, textarea, .uneditable-input {
+input, textarea, .uneditable-input, {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
+}
+
+.session-remember-me {
+  margin-left: 0px !important;
+  width: auto;
+}
+
+.checkbox {
+  margin-top: -10px 10px;
+  span{
+    margin-left: 20px;
+    font-weight: normal;
+  }
 }
