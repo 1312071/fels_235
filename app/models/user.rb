@@ -14,13 +14,16 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :lessons, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: Settings.max_name_leng}
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: {maximum: Settings.max_email_leng},
+  before_save :downcase_email
+  validates :name, presence: true,
+    length: {maximum: Settings.user.max_name_length}
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true,
+    length: {maximum: Settings.user.max_email_length},
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
-  validates :password, length: {minimum: Settings.min_password_leng},
-    if: -> {self.new_record?}
+  validates :password, length: {minimum: Settings.user.min_password_length},
+    allow_nil: true
 
   class << self
     def digest string
@@ -34,9 +37,18 @@ class User < ApplicationRecord
     end
   end
 
+  def current_user? user
+    self ==  user
+  end
   def remember
     self.remember_token = User.new_token
     update_attributes remember_digest: User.digest(remember_token)
+  end
+
+  def authenticated? attribute, token
+    digest = send "#{attribute}_digest"
+    return false unless digest
+    BCrypt::Password.new(digest).is_password? token
   end
 
   def forget

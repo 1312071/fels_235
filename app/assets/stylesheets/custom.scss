@@ -14,6 +14,7 @@
   }
 }
 
+$gray: #bbb;
 $hex_gray80: #ccc;
 $gray-medium-light: #eaeaea;
 
@@ -210,10 +211,40 @@ input {
   height: auto !important;
 }
 
-input, textarea, .uneditable-input, {
-  border: 1px solid #bbb;
-  width: 100%;
+input, textarea, .uneditable-input {
+  border: 1px solid $gray;
   margin-bottom: 15px;
+  width: 100%;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar-edit {
+  margin-top: 15px;
+}
+
+.users {
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px 0;
+  }
+  list-style: none;
+  margin: 0;
+}
+
+.user_avatars {
+  a {
+    padding: 0;
+  }
+  margin-top: 10px;
+  overflow: auto;
+  .gravatar {
+    margin: 1px;
+  }
 }
 
 .session-remember-me {
