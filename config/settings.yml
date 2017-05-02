@@ -1,3 +1,8 @@
 max_name_leng: 30
 max_email_leng: 50
 min_password_leng: 6
+picture_cate_size: 5
+max_cate_name: 50
+min_cate_name: 10
+max_cate_desc: 100
+valid_picture: "image/jpeg,image/gif,image/png"

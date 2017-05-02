@@ -95,3 +95,20 @@ en:
       sign_up: "Sign up"
       remember_me: "Remember me"
       log_in: "Please log in."
+  admin:
+    categories:
+      create:
+        new_cate_success: "create category successfully"
+        admin_required: "Please log in with admin privilege"
+      new:
+        btn_create: "Create"
+        title_form: "Create category"
+        admin_required: "Please log in with admin privilege"
+      index:
+        log_in: "Please log in."
+        picture_size_message: "should be less than 5MB"
+        admin_required: "Please log in with admin privilege"
+
+  category:
+    alert:
+      maximum_size: "Maximum file size is 5MB. Please choose a smaller file."
