@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
-
   resources :users, concerns: :paginatable
   get "/faq", to: "static_pages#help"
   get "/signup", to: "users#new"
@@ -12,6 +11,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   namespace :admin do
-    resources :categories, only: [:index, :new, :create]
+    resources :categories
   end
 end

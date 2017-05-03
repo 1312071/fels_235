@@ -253,9 +253,17 @@ input, textarea, .uneditable-input {
 }
 
 .checkbox {
-  margin-top: -10px 10px;
+  margin-top: -10px;
   span{
     margin-left: 20px;
     font-weight: normal;
+  }
+}
+
+.thumbnail {
+  height: 357px !important;
+  padding-top: 20px;
+  img {
+    height: 233px !important;
   }
 }
