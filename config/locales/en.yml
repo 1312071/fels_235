@@ -1,4 +1,22 @@
 en:
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "No %{entry_name} found"
+          one: "Displaying <b>1</b> %{entry_name}"
+          other: "Displaying <b>all %{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Displaying %{entry_name} <b>%{first} - %{last}</b> of
+        <b>%{total}</b> in total"
+
   static_pages:
     home:
       title: "Home"
@@ -72,13 +90,41 @@ en:
 
   users:
     new:
-      title: "Sign up"
-      btn_create: "Create new account"
+      sign_up: "Sign up"
+      submit: "Create new account"
       confirmation: "Confirmation"
       form_contains: "The form contains "
       error: "error"
     create:
       signup_success: "Sign up successfully!"
+    edit:
+      title: "Edit user"
+      update_your_profile: "Update your profile"
+      save_changes: "Save changes"
+      change: "change"
+      please_log_in: "Please log in."
+      err_find_user: "Error find correct user"
+
+    update:
+      profile_updated: "Profile updated"
+      err_find_user: "Error find correct user"
+
+    logged_in_user:
+      please_log_in: "Please log in."
+
+    destroy:
+      user_deleted: "User deleted"
+      err_find_user: "Error find correct user"
+      user_not_deleted: "Fail to delete this user"
+    user:
+      delete: "delete"
+      you_sure: "You sure?"
+      err_find_user: "Error find correct user"
+
+    show:
+      please_log_in: "Please log in."
+      err_find_user: "Error find correct user"
+
 
   shared:
     error_messages:

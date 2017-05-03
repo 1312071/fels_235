@@ -23,6 +23,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "fog"
 gem "i18n-js"
+gem "faker"
 
 group :development, :test do
 gem "sqlite3", "1.3.12"
