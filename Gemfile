@@ -18,6 +18,11 @@ gem "config"
 gem "i18n"
 gem "font-awesome-rails"
 gem "bcrypt"
+gem "autoprefixer-rails"
+gem "carrierwave"
+gem "mini_magick"
+gem "fog"
+gem "i18n-js"
 
 group :development, :test do
 gem "sqlite3", "1.3.12"

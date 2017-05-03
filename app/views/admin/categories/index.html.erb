@@ -1,0 +1,16 @@
+<div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <a href="#add-new" aria-controls="add-new" role="tab" data-toggle="tab">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <%= t ".add_new" %>
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="active" id="add-new">
+      <%= render "admin/categories/new" %>
+    </div>
+  </div>
+</div>

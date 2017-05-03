@@ -36,4 +36,11 @@ module SessionsHelper
   def logged_in?
     current_user.present?
   end
+
+  def verify_admin
+    unless current_user.is_admin?
+      flash[:danger] = t ".admin_required"
+      redirect_to root_url
+    end
+  end
 end
