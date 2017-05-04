@@ -84,6 +84,8 @@ en:
       log_in: "Log in"
       account: "Account"
       logout: "Logout"
+      categories: "Categories"
+
     application:
       application_name: "Fels235"
 
@@ -153,6 +155,11 @@ en:
       index:
         log_in: "Please log in."
         picture_size_message: "should be less than 5MB"
+        create: "Create"
+        title_form: "Create category"
+        admin_required: "Please log in with admin privilege"
+      index:
+        log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
         btn_create: "Create"
         title_form: "New category"
@@ -190,3 +197,12 @@ en:
       picture: "Picture"
       created_at: "Created at"
       stt: "No."
+
+  categories:
+    index:
+      title: "List category"
+      start_lesson: "Start"
+      search: "Search"
+    category:
+      contains: "Contains: "
+      word: "word(s)"

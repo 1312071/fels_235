@@ -212,8 +212,8 @@ input {
 
 input, textarea, .uneditable-input {
   border: 1px solid $gray;
-  margin-bottom: 15px;
   width: 100%;
+  margin-bottom: 15px;
 }
 
 .gravatar {
@@ -260,9 +260,9 @@ input, textarea, .uneditable-input {
 }
 
 .thumbnail {
-  height: 357px !important;
+  height: 350px !important;
   padding-top: 20px;
   img {
-    height: 233px !important;
+    height: 205px !important;
   }
 }

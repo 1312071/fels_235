@@ -11,8 +11,7 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  def default_url *args
-    "#{Rails.root}/app/assets/images/fallback/" +
-      [version_name, "default.png"].compact.join("_")
+  def default_url
+    "fallback/" + [version_name, "default.png"].compact.join("_")
   end
 end

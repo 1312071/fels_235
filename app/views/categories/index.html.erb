@@ -1,0 +1,15 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-offset-8">
+    <%= form_tag categories_path, method: :get do %>
+      <div class="col-md-9">
+        <%= text_field_tag :search, params[:search], class: "form-control" %>
+      </div>
+      <div class="col-md-3">
+        <%= submit_tag t(".search"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <%= render @categories %>
+  <%= paginate @categories, theme: "twitter-bootstrap-3" %>
+</div>
