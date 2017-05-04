@@ -1,6 +1,18 @@
+<%= provide :button_text, t(".btn_create") %>
+<%= provide :title_form, t(".title_form") %>
+<%= provide :url_form, admin_categories_path %>
 <div>
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active">
+    <li role="presentation"
+      class="<%= "active" unless params[:action] == "create" %>">
+      <a href="#list-cate" aria-controls="list-cate" role="tab"
+        data-toggle="tab">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <%= t ".list_cate" %>
+      </a>
+    </li>
+    <li role="presentation"
+      class="<%= "active" if params[:action] == "create" %>">
       <a href="#add-new" aria-controls="add-new" role="tab" data-toggle="tab">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         <%= t ".add_new" %>
@@ -9,8 +21,16 @@
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" class="active" id="add-new">
-      <%= render "admin/categories/new" %>
+    <div role="tabpanel"
+      class="tab-pane <%= "active" if params[:action] == "create" %>"
+      id="add-new">
+      <h1><%= t ".title_form" %></h1>
+      <%= render "category_form" %>
+    </div>
+    <div role="tabpanel"
+      class="tab-pane <%= "active" unless params[:action] == "create" %>"
+      id="list-cate">
+      <%= render "show_cate" %>
     </div>
   </div>
 </div>

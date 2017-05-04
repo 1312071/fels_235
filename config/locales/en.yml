@@ -84,7 +84,6 @@ en:
       log_in: "Log in"
       account: "Account"
       logout: "Logout"
-
     application:
       application_name: "Fels235"
 
@@ -125,7 +124,6 @@ en:
       please_log_in: "Please log in."
       err_find_user: "Error find correct user"
 
-
   shared:
     error_messages:
       form_contains: "The form contains "
@@ -141,6 +139,7 @@ en:
       sign_up: "Sign up"
       remember_me: "Remember me"
       log_in: "Please log in."
+
   admin:
     categories:
       create:
@@ -150,9 +149,32 @@ en:
         btn_create: "Create"
         title_form: "Create category"
         admin_required: "Please log in with admin privilege"
+        log_in: "Please log in."
       index:
         log_in: "Please log in."
         picture_size_message: "should be less than 5MB"
+        admin_required: "Please log in with admin privilege"
+        btn_create: "Create"
+        title_form: "New category"
+        list_cate: "List categories"
+        add_new: "Add new"
+        delete_error_message: "Cannot delete"
+      show_cate:
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      update:
+        invalid_category: "Invalid category"
+        update_success: "Update category successfully"
+      destroy:
+        invalid_category: "Invalid category"
+        delete_cate: "Delete successfully!"
+        delete_cate_failed: "Delete failed"
+      edit:
+        btn_edit: "Edit"
+        title_form: "Edit category"
+        invalid_category: "Invalid category"
+        log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
 
   category:

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @category, url: yield(:url_form) do |f| %>
+
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :picture %>
+      <span class="picture"
+        data-psize="<%= Settings.category.picture_cate_size %>">
+        <%= f.file_field :picture, accept: Settings.category.valid_picture,
+          class: "form-control" %>
+      </span>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
