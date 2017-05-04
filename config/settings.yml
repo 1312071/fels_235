@@ -18,3 +18,13 @@ category:
 word:
   picture_size: 150
   per_page: 20
+  picture_size: 200
+  max_length_content: 200
+answer_count: 0
+answer_quanlity: 2
+filter_words:
+  learned: "learned"
+  not_learned: "not_learned"
+  learned_correct: "learned_correct"
+  learned_not_correct: "learned_not_correct"
+  get_all: "get_all"

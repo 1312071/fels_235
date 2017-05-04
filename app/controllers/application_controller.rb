@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
   def is_learning user_id
     Lesson.exists? user_id: user_id
   end
+
+  def load_all_category
+    @categories = Category.select(:name, :id).order("LOWER(name)")
+  end
 end

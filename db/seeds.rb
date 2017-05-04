@@ -22,14 +22,23 @@ end
     description: description
 end
 
-100.times do
-  content = Faker::Lorem.word
+100.times do |n|
+  content = Faker::Lorem.word + "#{n}"
   category = Category.order("RANDOM()").first
-  category.words.create! content: content,
+  category.words.create!(content: content,
     answers: Answer.create([
-      {content: Faker::Lorem.word , is_correct: true},
-      {content: Faker::Lorem.word , is_correct: false},
-      {content: Faker::Lorem.word , is_correct: false},
-      {content: Faker::Lorem.word , is_correct: false}
-  ])
+      {content: Faker::Lorem.word, is_correct: true},
+      {content: Faker::Lorem.word, is_correct: false},
+      {content: Faker::Lorem.word, is_correct: false},
+      {content: Faker::Lorem.word, is_correct: false}
+  ]))
 end
+
+Lesson.create! user_id: 1, category_id: 15,
+  results: Result.create([
+    {word_id: 1, answer_id: 2},
+    {word_id: 2, answer_id: 5},
+    {word_id: 3, answer_id: 7},
+    {word_id: 4, answer_id: 12},
+    {word_id: 5, answer_id: 16}
+  ])

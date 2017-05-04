@@ -1,5 +1,27 @@
 <% provide :title, t(".title") %>
 <h1><%= t ".title" %></h1>
+<div class="well">
+  <%= form_for words_path, method: :get do |f| %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.label t ".search" %>
+        <%= search_field_tag :search_word, params[:search_word],
+          placeholder: t(".search"), class: "form-control" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label t ".category" %>
+        <%= select_tag :category_id,
+          options_from_collection_for_select(@categories, "id", "name",
+          params[:category_id]), include_blank: t("all"),
+          class: "form-control form-small" %>
+      </div>
+    </div>
+    <div class="row center"><%= render "filter_form" %></div>
+    <div class="center">
+      <%= f.submit t(".filter"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
 <table class="table">
   <tr>
     <th><%= t ".stt" %></th>
@@ -9,7 +31,7 @@
     <th><%= t ".picture" %></th>
     <th><%= t ".created_at" %></th>
   </tr>
-  <tbody>
+  <tbody id="result">
     <%= render @words %>
   </tbody>
 </table>
