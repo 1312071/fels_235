@@ -26,15 +26,15 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t ".profile_updated"
+      flash[:success] = t "users.message.profile_updated"
       redirect_to @user
     else
       render :edit
     end
   end
 
-  private
 
+  private
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation

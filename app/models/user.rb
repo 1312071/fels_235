@@ -35,6 +35,28 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+
+    def search query
+      if query
+        terms = query.downcase.split(/\s+/)
+        terms = terms.map {|e|
+          (e.gsub("*", "%") + "%").gsub(/%+/, "%")
+        }
+        num_or_conditions = 2
+        where(
+          terms.map {
+            or_clauses = [
+              "users.name LIKE ?",
+              "users.email LIKE ?"
+            ].join(" OR ")
+            "(#{or_clauses})"
+          }.join(" AND "),
+          *terms.map {|e| [e] * num_or_conditions}.flatten
+        )
+      else
+        all
+      end
+    end
   end
 
   def current_user? user
