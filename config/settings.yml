@@ -5,6 +5,8 @@ user:
   password_reset_time_expired: 2
   param_pages_users: 20
   avatar: 50
+  per_page: 20
+  small_avatar: 30
 gravatar:
   gravatar_size: 80
   gravatar_micropost_size: 50
@@ -28,3 +30,12 @@ filter_words:
   learned_correct: "learned_correct"
   learned_not_correct: "learned_not_correct"
   get_all: "get_all"
+feed:
+  per_page: 20
+follower:
+  per_page: 20
+following:
+  per_page: 20
+activity:
+  per_page: 20
+  size: 20

@@ -51,6 +51,7 @@ en:
       our_values: "Our Values"
       mission: "MISSION: creative for life"
       vision: "VISION: 1 billion users"
+      news_feed: "News feeds"
     help:
       faq_header: "Frequently Asked Questions"
       question1: "Which English language level should I choose?"
@@ -132,11 +133,20 @@ en:
       not_deleted: "Fail to delete this user"
       cant_deleted: "This user is learning! Can not delete"
       admin_required: "Please log in with admin privilege"
+      create_follow: "Can not create this followed user"
+      destroy_follow: "Can not destroy this followed user"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
 
   shared:
     error_messages:
       form_contains: "The form contains "
       error: "error"
+    stats:
+      followings: "Followings"
+      followers: "Followers"
 
   sessions:
     create:
@@ -229,7 +239,7 @@ en:
       category: "Category"
       picture: "Picture"
       created_at: "Created at"
-      stt: "No."
+      index: "No."
 
   categories:
     index:
@@ -244,3 +254,8 @@ en:
     warning_answer_limit: "Maximum of Answers is 6"
     must_has_correct_answer_error: "must has correct answer"
     get_all: "get_all"
+  activities:
+    activity:
+      follow: "Follow"
+      unfollow: "Unfollow"
+      ago: "ago"
