@@ -1,0 +1,23 @@
+<tr>
+  <td>
+    <%= index_for word_counter, @words.current_page, Settings.word.per_page %>
+  </td>
+  <td class="name">
+    <%= word.content %>
+  </td>
+  <td class="meaning">
+    <% word.find_answer.each do |answer| %>
+      <%= answer.content %>
+    <% end %>
+  </td>
+  <td class="category">
+    <%= word.category.name %>
+  </td>
+  <td>
+    <%= image_tag word.picture.url,
+      size: Settings.word.picture_size if word.picture? %>
+  </td>
+  <td class="created_at">
+    <%= word.created_at.to_date.to_s :long %>
+  </td>
+</tr>

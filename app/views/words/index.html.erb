@@ -1,0 +1,16 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<table class="table">
+  <tr>
+    <th><%= t ".stt" %></th>
+    <th><%= t ".content" %></th>
+    <th><%= t ".meaning" %></th>
+    <th><%= t ".category" %></th>
+    <th><%= t ".picture" %></th>
+    <th><%= t ".created_at" %></th>
+  </tr>
+  <tbody>
+    <%= render @words %>
+  </tbody>
+</table>
+<%= paginate @words, theme: "twitter-bootstrap-3" %>

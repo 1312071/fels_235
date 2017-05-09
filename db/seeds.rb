@@ -13,3 +13,23 @@ User.create! name: "Admin User",
     password: password,
     password_confirmation: password
 end
+
+20.times do
+  name = Faker::Lorem.words(rand(3..4)).join " "
+  description = Faker::Lorem.paragraph sentence_count = 1,
+    supplemental = false, random_sentences_to_add = 1
+  Category.create! name: name,
+    description: description
+end
+
+100.times do
+  content = Faker::Lorem.word
+  category = Category.order("RANDOM()").first
+  category.words.create! content: content,
+    answers: Answer.create([
+      {content: Faker::Lorem.word , is_correct: true},
+      {content: Faker::Lorem.word , is_correct: false},
+      {content: Faker::Lorem.word , is_correct: false},
+      {content: Faker::Lorem.word , is_correct: false}
+  ])
+end

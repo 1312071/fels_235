@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
   resources :users, concerns: :paginatable
+  resources :words, only: :index
   get "/faq", to: "static_pages#help"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"

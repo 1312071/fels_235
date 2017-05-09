@@ -180,3 +180,13 @@ en:
   category:
     alert:
       maximum_size: "Maximum file size is 5MB. Please choose a smaller file."
+
+  words:
+    index:
+      title: "Word List"
+      content: "Content"
+      meaning: "Meaning"
+      category: "Category"
+      picture: "Picture"
+      created_at: "Created at"
+      stt: "No."
