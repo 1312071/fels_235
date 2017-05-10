@@ -1,0 +1,8 @@
+<tr class="category-row">
+  <td class="word_id col-sm-1">
+    <%= index_for word_counter, @words.current_page,
+      Settings.word.per_page %>
+  </td>
+  <td class="word_name col-sm-3"><%= word.content %></td>
+  <td class="category_id col-sm-4"><%= word.category.name %></td>
+</tr>
