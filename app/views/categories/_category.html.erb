@@ -11,5 +11,11 @@
       <%= category.words.size %>
       <%= t "categories.category.word" %>
     </h5>
+    <% if logged_in? && !current_user.is_admin? %>
+      <%= form_for category.lessons.build do |f| %>
+        <%= f.hidden_field :category_id, value: category.id %>
+        <%= f.submit t(".start_lesson"), class: "btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
 </div>
