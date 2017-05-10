@@ -15,6 +15,13 @@ category:
   max_cate_desc: 100
   valid_picture: "image/jpeg,image/gif,image/png"
   cate_per_page: 6
+  picture_cate_width: 400
+  picture_cate_height: 400
+lesson:
+  word_per_lesson: 10
+  limit_lesson: 3
+result:
+  single_answer: 1
 word:
   picture_size: 150
   per_page: 20

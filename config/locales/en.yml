@@ -174,20 +174,16 @@ en:
       title: "Manage Categories"
       create:
         new_cate_success: "create category successfully"
+      verify_admin:
+        admin_required: "Please log in with admin privilege"
       new:
         btn_create: "Create"
         title_form: "Create category"
-        admin_required: "Please log in with admin privilege"
-        log_in: "Please log in."
       index:
-        log_in: "Please log in."
         picture_size_message: "should be less than 5MB"
         create: "Create"
         title_form: "Create category"
-        admin_required: "Please log in with admin privilege"
-      index:
         log_in: "Please log in."
-        admin_required: "Please log in with admin privilege"
         btn_create: "Create"
         title_form: "New category"
         list_cate: "List categories"
@@ -197,6 +193,8 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "Are you sure?"
+      edit:
+        invalid_category: "Invalid category"
       update:
         invalid_category: "Invalid category"
         update_success: "Update category successfully"
@@ -208,8 +206,8 @@ en:
         btn_edit: "Edit"
         title_form: "Edit category"
         invalid_category: "Invalid category"
-        log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
+
   category:
     alert:
       maximum_size: "Maximum file size is 5MB. Please choose a smaller file."
@@ -234,13 +232,31 @@ en:
   categories:
     index:
       title: "List category"
-      start_lesson: "Start"
       search: "Search"
     category:
       contains: "Contains: "
       word: "word(s)"
-
+      start_lesson: "Start"
     answer_quanlity_error: "at least 2 answers"
     warning_answer_limit: "Maximum of Answers is 6"
     must_has_correct_answer_error: "must has correct answer"
     get_all: "get_all"
+
+  results:
+    result:
+      next: "Next"
+    correct_user:
+      not_privilege: "You do not have enough access privileges for this \
+        operation"
+    index:
+      list_result: "List result of a lesson"
+
+  lessons:
+    create:
+      start_lesson_failed: "Start lesson failed!"
+    alert:
+      choose_answer: "Please choose your answer"
+    verify_lesson_finished:
+      lesson_finished: "Lesson finished"
+    load_lesson:
+      lesson_invalid: "Invalid lesson"
