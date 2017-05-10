@@ -217,6 +217,13 @@ en:
   words:
     index:
       title: "Word List"
+      category: "Category"
+      search: "Search"
+      sort_by: "Sort by"
+      any: "- Any -"
+      filter: "Filter"
+    list:
+      reset_filter: "Reset filter"
       content: "Content"
       meaning: "Meaning"
       category: "Category"
@@ -232,3 +239,8 @@ en:
     category:
       contains: "Contains: "
       word: "word(s)"
+
+    answer_quanlity_error: "at least 2 answers"
+    warning_answer_limit: "Maximum of Answers is 6"
+    must_has_correct_answer_error: "must has correct answer"
+    get_all: "get_all"

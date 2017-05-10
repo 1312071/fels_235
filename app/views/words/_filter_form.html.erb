@@ -1,0 +1,7 @@
+<% Settings.filter_words.each do |key, value| %>
+  <%= label_tag value, class: "radio-inline" do %>
+    <%= radio_button_tag :condition, value,
+      checked = params[:condition] == value || params[:condition].blank? %>
+    <%= value.titleize %>
+  <% end %>
+<% end %>
