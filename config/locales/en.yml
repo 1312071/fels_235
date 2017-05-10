@@ -90,41 +90,48 @@ en:
       application_name: "Fels235"
 
   users:
+    sort_options:
+      created_at_asc: "Created date (oldest first)"
+      created_at_desc: "Created date (newest first)"
+      name_asc: "Name (a-z)"
+      name_dsc: "Name (z-a)"
+      name: "name"
+      created_at: "created_at"
+    index:
+      title: "All users"
+
     new:
       sign_up: "Sign up"
       submit: "Create new account"
       confirmation: "Confirmation"
       form_contains: "The form contains "
       error: "error"
+
     create:
       signup_success: "Sign up successfully!"
+
     edit:
       title: "Edit user"
       update_your_profile: "Update your profile"
       save_changes: "Save changes"
       change: "change"
-      please_log_in: "Please log in."
-      err_find_user: "Error find correct user"
 
-    update:
+    message:
       profile_updated: "Profile updated"
-      err_find_user: "Error find correct user"
-
-    logged_in_user:
-      please_log_in: "Please log in."
-
-    destroy:
       user_deleted: "User deleted"
-      err_find_user: "Error find correct user"
-      user_not_deleted: "Fail to delete this user"
-    user:
-      delete: "delete"
-      you_sure: "You sure?"
-      err_find_user: "Error find correct user"
 
-    show:
+    user:
+      delete: "Delete"
+
+    popup:
+      you_sure: "You sure?"
+
+    errors:
       please_log_in: "Please log in."
       err_find_user: "Error find correct user"
+      not_deleted: "Fail to delete this user"
+      cant_deleted: "This user is learning! Can not delete"
+      admin_required: "Please log in with admin privilege"
 
   shared:
     error_messages:
@@ -143,10 +150,30 @@ en:
       log_in: "Please log in."
 
   admin:
+    title: "Administration"
+    users:
+      title: "Manage Users"
+      index:
+        total: "Total: "
+        search: "Search"
+        sort_by: "Sort by"
+        any: "- Any -"
+      user:
+        reset_filter: "Reset filter"
+        stt: "No."
+        name: "Name"
+        email: "Email"
+        avatar: "Avatar"
+        action: "Action"
+        picture: "Picture"
+        created_at: "Created at"
+      error:
+        get_data: "get data fail"
+
     categories:
+      title: "Manage Categories"
       create:
         new_cate_success: "create category successfully"
-        admin_required: "Please log in with admin privilege"
       new:
         btn_create: "Create"
         title_form: "Create category"
@@ -183,7 +210,6 @@ en:
         invalid_category: "Invalid category"
         log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
-
   category:
     alert:
       maximum_size: "Maximum file size is 5MB. Please choose a smaller file."

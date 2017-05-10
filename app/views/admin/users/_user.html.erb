@@ -1,0 +1,29 @@
+<table class="table">
+  <tr>
+    <th><%= t ".stt" %></th>
+    <th><%= t ".avatar" %></th>
+    <th><%= t ".name" %></th>
+    <th><%= t ".email" %></th>
+    <th><%= t ".created_at" %></th>
+    <th><%= t ".action" %></th>
+  </tr>
+  <% users.each.with_index do |user, index| %>
+    <tr>
+      <td><%= index_for index, @users.current_page, Settings.user.param_pages_users %></td>
+      <td><%= gravatar_for user, size: Settings.user.avatar %></td>
+      <td><%= link_to user.name, user %></td>
+      <td><%= mail_to user.email, "#{user.email}" %></td>
+      <td>
+        <%= user.created_at.to_s :long %>
+      </td>
+      <td>
+        <% if current_user.is_admin? && !user.current_user?(current_user) &&
+          !user.is_admin %>
+          <%= link_to t(".delete"), user, method: :delete,
+            data: {confirm: t("users.popup.you_sure")} %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= paginate @users, theme: "twitter-bootstrap-3" %>

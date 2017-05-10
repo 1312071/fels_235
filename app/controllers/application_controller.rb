@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
   helper_method :find_answer
   def logged_in_user
     unless logged_in?
-      flash[:danger] = t ".log_in"
+      store_location
+      flash[:danger] = t "users.errors.please_log_in"
       redirect_to login_url
     end
   end
@@ -18,8 +19,12 @@ class ApplicationController < ActionController::Base
 
   def load_user
     unless @user = User.find_by(id: params[:id])
-      flash[:danger] = t ".err_find_user"
+      flash[:danger] = t "users.errors.err_find_user"
       redirect_to request.referrer || root_url
     end
+  end
+
+  def is_learning user_id
+    Lesson.exists? user_id: user_id
   end
 end

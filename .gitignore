@@ -59,5 +59,4 @@ config/database.yml
 
 # Ignore uploaded.
 /public/*
-
-/assets/javascripts/i18n/translations.js
+app/assets/javascripts/i18n/translations.js
