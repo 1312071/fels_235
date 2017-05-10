@@ -2,10 +2,11 @@ class Word < ApplicationRecord
   belongs_to :category
   has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
+
   validates :content, presence: true,
     length: {maximum: Settings.word.max_length_content}
   validate :validates_answers
-  validates :content, uniqueness: true
+  validates :content, uniqueness: true, presence: true
   mount_uploader :picture, PictureUploader
   validate :picture_size
 
@@ -58,6 +59,9 @@ class Word < ApplicationRecord
       .where("answers.is_correct =\"t\" and answers.word_id = ?", self.id)
   end
 
+  def count_true_answer_for_word
+    self.answers.where(is_correct: "t").count
+  end
 
   private
 

@@ -1,0 +1,16 @@
+<div id="answer">
+  <h3>
+    <%= object.lesson.category.name %>
+    <%= object.current_result_stt %>/<%= Settings.lesson.word_per_lesson %>
+  </h3>
+  <h3><%= object.current_result_stt %>.<%= object.word.content %></h3>
+  <input id="result_id" name="tags_list" value="<%= object.id %>"
+    type="hidden" />
+  <% object.word.answers.each do |answer| %>
+    <div class="radio">
+      <label><input type="checkbox" name="answer[]" value="<%= answer.id %>">
+        <%= answer.content %>
+      </label>
+    </div>
+  <% end %>
+</div>
