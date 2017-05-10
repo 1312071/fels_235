@@ -3,9 +3,7 @@
     <%= link_to t(".app_name"), root_path, class: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to t("layouts.header.categories"), categories_path %>
-        </li>
+        <li><%= link_to t("layouts.header.categories"), categories_path %></li>
         <% if logged_in? %>
           <% if current_user.is_admin? %>
             <%= render "layouts/admin_header" %>

@@ -26,6 +26,7 @@ gem "i18n-js"
 gem "faker"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "faker"
 
 group :development, :test do
 gem "sqlite3", "1.3.12"

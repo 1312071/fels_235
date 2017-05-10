@@ -1,0 +1,9 @@
+<div class="container">
+  <% if count_true_answer(@result) > Settings.result.single_answer %>
+    <%= render partial: "results/result_multiple", locals: {object: @result} %>
+  <% else %>
+    <%= render partial: "results/result_single", locals: {object: @result} %>
+  <% end %>
+  <%= button_tag t("results.result.next"),id: "btn_answer",
+    class: "btn btn-primary" %>
+</div>

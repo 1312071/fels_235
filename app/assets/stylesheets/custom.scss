@@ -211,9 +211,9 @@ input {
 }
 
 input, textarea, .uneditable-input {
-  border: 1px solid $gray;
-  width: 100%;
+  border: 1px solid #bbb;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .gravatar {
@@ -254,15 +254,21 @@ input, textarea, .uneditable-input {
 .checkbox {
   margin-top: -10px;
   span{
-    margin-left: 20px;
     font-weight: normal;
+    margin-left: 20px;
   }
 }
 
 .thumbnail {
-  height: 350px !important;
+  height: 365px !important;
   padding-top: 20px;
   img {
     height: 205px !important;
+  }
+}
+
+.radio {
+  input {
+    width: auto !important;
   }
 }

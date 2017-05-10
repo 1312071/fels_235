@@ -18,3 +18,10 @@ category:
 word:
   picture_size: 150
   per_page: 20
+  picture_cate_width: 400
+  picture_cate_height: 400
+lesson:
+  word_per_lesson: 10
+  limit_lesson: 3
+result:
+  single_answer: 1
