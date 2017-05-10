@@ -58,6 +58,6 @@ class Admin::CategoriesController < ApplicationController
 
   def load_categories
     @categories = Category.select(:id, :name, :description, :picture)
-    .page(params[:page]).per Settings.category.cate_per_page
+      .page(params[:page]).per Settings.category.cate_per_page
   end
 end

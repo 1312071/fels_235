@@ -13,6 +13,8 @@ class Category < ApplicationRecord
     length: {maximum: Settings.category.max_cate_desc}
   validate :picture_size
 
+  scope :search, ->string_search {where "name LIKE '%#{string_search}%'"}
+
   private
 
   def picture_size
