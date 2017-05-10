@@ -237,7 +237,11 @@ en:
       not_privilege: "You do not have enough access privileges for this \
         operation"
     index:
-      list_result: "List result of a lesson"
+      index:
+      no.: "No."
+      result: "Result"
+      question: "Question"
+      your_answer: "Your answer"
 
   lessons:
     create:
@@ -251,3 +255,8 @@ en:
         this category"
     load_lesson:
       lesson_invalid: "Invalid lesson"
+    index:
+      category: "Category"
+      point: "Point"
+      start_date: "Start date"
+      time_default: "%d/%m/%Y"

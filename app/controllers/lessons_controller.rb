@@ -4,6 +4,11 @@ class LessonsController < ApplicationController
     only: [:show, :correct_user_lesson, :verify_lesson_finished]
   before_action :check_lesson_limit, only: :create
 
+  def index
+    @lessons = Lesson.includes(:category).where(user_id: current_user.id)
+      .order(created_at: :desc)
+  end
+
   def new
   end
 

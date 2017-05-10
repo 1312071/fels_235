@@ -3,6 +3,8 @@ class ResultsController < ApplicationController
   before_action :correct_user_result, only: [:index, :edit, :update]
 
   def index
+    @results = Result.where(lesson_id: params[:lesson_id])
+      .group(:word_id).order(id: :asc)
   end
 
   def edit

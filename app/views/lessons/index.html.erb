@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th><%= t"lessons.index.category" %></th>
+            <th><%= t"lessons.index.point" %></th>
+            <th><%= t"lessons.index.start_date" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @lessons.each do |lesson| %>
+            <tr>
+              <td><%= link_to lesson.category.name,
+                lesson_results_path(lesson_id: lesson.id) %></td>
+              <td><%= lesson.point %></td>
+              <td>
+                <%= lesson.created_at.strftime t("lessons.index.time_default") %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
