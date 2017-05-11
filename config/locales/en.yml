@@ -169,6 +169,17 @@ en:
         created_at: "Created at"
       error:
         get_data: "get data fail"
+    words:
+      show:
+        word_detail: "Word Details"
+        back: "Back"
+        content: "Content"
+        category: "Category"
+        answers: "Answers"
+      word:
+        show: "show"
+        edit: "edit"
+        delete: "delete"
 
     categories:
       title: "Manage Categories"
