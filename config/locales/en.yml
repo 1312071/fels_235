@@ -89,6 +89,7 @@ en:
       words: "Words"
       log_out: "Logout"
       categories: "Categories"
+      my_lessons: "My lessons"
 
     application:
       application_name: "Fels235"
@@ -339,6 +340,16 @@ en:
   pdf:
     time_default: "%m/%d/%Y-%H:%M"
 
+  lessons:
+    index:
+      category: "Category"
+      point: "Point"
+      start_date: "Start date"
+      time_default: "%d/%m/%Y"
+      name: "name"
+      category: "Category"
+      search: "Search"
+
   results:
     result:
       next: "Next"
@@ -361,3 +372,8 @@ en:
       lesson_invalid: "Invalid lesson"
     create:
       not_enough_word: "Category hasn't enough word to start lesson"
+    index:
+      no.: "No."
+      result: "Result"
+      question: "Question"
+      your_answer: "Your answer"

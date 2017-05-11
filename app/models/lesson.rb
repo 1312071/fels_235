@@ -7,6 +7,8 @@ class Lesson < ApplicationRecord
   has_many :activities, as: :target
   after_save :create_result_for_lesson
 
+  scope :search, ->cate_id{where "category_id = #{cate_id}" if cate_id}
+
   def current_result
     results.where("answer_id IS NULL").first
   end
@@ -49,4 +51,9 @@ class Lesson < ApplicationRecord
       end
     end
   end
+
+  def result_for_lesson
+    Result.where(lesson_id: self.id).group(:word_id).order id: :asc
+  end
+
 end

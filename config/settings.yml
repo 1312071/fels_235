@@ -46,3 +46,8 @@ following:
 activity:
   per_page: 20
   size: 20
+lesson:
+  lesson_per_page: 10
+  word_per_lesson: 10
+result:
+  result_single: 1

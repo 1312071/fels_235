@@ -1,7 +1,13 @@
 class LessonsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :show, :create]
+  before_action :logged_in_user, only: [:index, :new, :show, :create]
   before_action :load_lesson, :check_user_for_lesson, :verify_lesson_finished,
     only: :show
+
+  def index
+    @lessons = current_user.lessons.includes(:category).where(is_finish: true)
+      .search(params[:Category]).order(created_at: :desc).page(params[:page])
+      .per Settings.lesson.lesson_per_page
+  end
 
   def new
   end
@@ -51,5 +57,4 @@ class LessonsController < ApplicationController
       flash[:danger] = t "lessons.verify_lesson_finished.lesson_finished"
       redirect_to categories_url
     end
-  end
 end
