@@ -18,7 +18,7 @@ class Result < ApplicationRecord
   def check_answer
     @list_answer = Result.where word_id: self.word_id,
       lesson_id: self.lesson_id
-    if self.count_true_answer != @list_answer.count
+    if self.count_true_answer != @list_answer.size
       return false
     else
       @list_answer.each do |res|

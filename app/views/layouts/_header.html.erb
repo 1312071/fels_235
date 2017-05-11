@@ -7,6 +7,10 @@
         <% if logged_in? %>
           <% if current_user.is_admin? %>
             <%= render "layouts/admin_header" %>
+          <% else %>
+            <li>
+              <%= link_to t("layouts.header.my_lessons"), lessons_path %>
+            </li>
           <% end %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

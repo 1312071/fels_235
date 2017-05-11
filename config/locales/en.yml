@@ -85,6 +85,7 @@ en:
       account: "Account"
       logout: "Logout"
       categories: "Categories"
+      my_lessons: "My lessons"
 
     application:
       application_name: "Fels235"
@@ -249,7 +250,10 @@ en:
       not_privilege: "You do not have enough access privileges for this \
         operation"
     index:
-      list_result: "List result of a lesson"
+      no.: "No."
+      result: "Result"
+      question: "Question"
+      your_answer: "Your answer"
 
   lessons:
     create:
@@ -260,3 +264,11 @@ en:
       lesson_finished: "Lesson finished"
     load_lesson:
       lesson_invalid: "Invalid lesson"
+    index:
+      category: "Category"
+      point: "Point"
+      start_date: "Start date"
+      time_default: "%d/%m/%Y"
+      name: "name"
+      category: "Category"
+      search: "Search"

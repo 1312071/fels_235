@@ -1,8 +1,14 @@
 class LessonsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :show, :create]
+  before_action :logged_in_user, only: [:index, :new, :show, :create]
   before_action :load_lesson, only: [:show, :check_user_for_lesson,
     :verify_lesson_finished]
   before_action :verify_lesson_finished, :check_user_for_lesson, only: :show
+
+  def index
+    @lessons = current_user.lessons.includes(:category).search(params[:Category])
+      .order(created_at: :desc).page(params[:page])
+      .per Settings.lesson.lesson_per_page
+  end
 
   def new
   end

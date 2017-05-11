@@ -1,1 +1,25 @@
-<%= t "results.index.list_result" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3>
+        <%= @results.first.lesson.category.name %> -
+        <%= @results.first.lesson.point %>/<%= Settings.lesson.word_per_lesson %>
+      </h3>
+
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th><%= t "results.index.no." %></th>
+            <th><%= t "results.index.result" %></th>
+            <th><%= t "results.index.question" %></th>
+            <th><%= t "results.index.your_answer" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @results %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

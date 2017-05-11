@@ -6,6 +6,8 @@ class Lesson < ApplicationRecord
 
   after_save :create_result_for_lesson
 
+  scope :search, ->cate_id {where "category_id = #{cate_id}" unless cate_id.nil? || cate_id.empty?}
+
   def current_result
     self.results.where("answer_id IS NULL").first
   end
@@ -27,7 +29,7 @@ class Lesson < ApplicationRecord
   private
 
   def create_result_for_lesson
-    if self.created_at = self.updated_at
+    if self.created_at == self.updated_at
       Result.transaction do
         @words = Word.where(category_id: self.category_id)
           .order("RANDOM()").limit Settings.lesson.word_per_lesson
@@ -44,5 +46,4 @@ class Lesson < ApplicationRecord
       end
     end
   end
-
 end
