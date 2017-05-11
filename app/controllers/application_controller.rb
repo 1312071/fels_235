@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_word
-    unless @word = Word.find_by(id: params[:id])
+    unless @word = Word.includes(:answers).find_by(id: params[:id])
       render_404
     end
   end

@@ -9,6 +9,8 @@ class Word < ApplicationRecord
   validates :content, uniqueness: true
   mount_uploader :picture, PictureUploader
   validate :picture_size
+  accepts_nested_attributes_for :answers, allow_destroy: true,
+    reject_if: proc{|attributes| attributes["content"].blank?}
 
   LEARNT_QUERY = "content like :search and id IN (select word_id
     FROM results as r INNER JOIN lessons as l
@@ -58,6 +60,9 @@ class Word < ApplicationRecord
       .where("answers.is_correct =\"t\" and answers.word_id = ?", self.id)
   end
 
+  def is_word_learned?
+    Result.exists? word_id: self.id
+  end
 
   private
 
