@@ -1,7 +1,7 @@
-<% provide :title, t(".title") %>
-<h1><%= t ".title" %></h1>
+<% provide :title, t("admin.words.title") %>
+<h1><%= t "admin.words.title" %></h1>
 <div class="well">
-  <%= form_for words_path, method: :get do |f| %>
+  <%= form_for admin_words_path, method: :get do |f| %>
     <div class="row">
       <div class="col-md-4">
         <%= f.label t ".search" %>
@@ -16,28 +16,16 @@
           class: "form-control form-small" %>
       </div>
     </div>
-    <div class="row center"><%= render "filter_form" %></div>
     <div class="center">
       <%= f.submit t(".filter"), class: "btn btn-primary" %>
     </div>
   <% end %>
 </div>
-<div class="well well-small">
-  <div class="pull-right" >
-    <%= link_to t(".reset_filter"), words_path, class: "btn btn-default btn-sm" %>
-      <%= link_to t(".pdf_export"), words_path(format: "pdf"),
-        class: "btn btn-default btn-sm" %>
-  </div>
-  <%= page_entries_info @words %>
-</div>
 <table class="table">
   <tr>
     <th><%= t ".index" %></th>
     <th><%= t ".content" %></th>
-    <th><%= t ".meaning" %></th>
     <th><%= t ".category" %></th>
-    <th><%= t ".picture" %></th>
-    <th><%= t ".created_at" %></th>
   </tr>
   <tbody id="result">
     <%= render @words %>

@@ -1,0 +1,30 @@
+<% provide :title, @word.content %>
+<h1><%= t ".word_detail" %></h1>
+<div class="row">
+  <table class="table">
+    <tr>
+      <th><%= t "admin.index.content" %></th>
+      <th><%= t "admin.index.answers" %></th>
+      <th><%= t "admin.index.category" %></th>
+    </tr>
+    <tr>
+      <td><%= @word.content %></td>
+      <td>
+        <ul>
+          <% @answers.each do |answer| %>
+            <div>
+              <% if answer.is_correct %>
+                <span class="glyphicon glyphicon-ok"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-remove"></span>
+              <% end %>
+              <%= answer.content %>
+            <div>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= @word.category.name %></td>
+    </tr>
+  </table>
+  <%= link_to t(".back"), :back, class: "btn btn-primary fa fa-chevron-left pull-right" %>
+</div>

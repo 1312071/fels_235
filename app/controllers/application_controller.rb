@@ -30,7 +30,15 @@ class ApplicationController < ActionController::Base
   end
 
   def load_all_category
-    @categories = Category.select(:name, :id).order("LOWER(name)")
+    unless @categories = Category.select(:name, :id).order("LOWER(name)")
+      render_404
+    end
+  end
+
+  def load_word
+    unless @word = Word.find_by(id: params[:id])
+      render_404
+    end
   end
 
   def verify_admin
@@ -38,5 +46,12 @@ class ApplicationController < ActionController::Base
       flash[:danger] = t "admin.categories.verify_admin.admin_required"
       redirect_to root_url
     end
+  end
+
+
+  protected
+
+  def render_404
+    render file: "#{Rails.root}/public/404.html", layout: false, status: 404
   end
 end

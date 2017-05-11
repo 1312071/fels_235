@@ -1,9 +1,7 @@
-<li>
-  <%= gravatar_for user, size: Settings.user.avatar %>
-  <%= link_to user.name, user %>
-   <% if current_user.is_admin? && !user.current_user?(current_user)
-      && !user.is_admin %>
-    | <%= link_to t(".delete"), user, method: :delete,
-      data: {confirm: t(".you_sure")} %>
-  <% end %>
-</li>
+<tr class="user-row">
+  <td class="col-md-1"><%= index_for user_counter, @users.current_page,
+    Settings.user.per_page %></td>
+  <td class="col-md-3 user-image"><%= gravatar_for user, size: Settings.user.avatar %>
+  <td class="col-md-4"><%= link_to user.name, user %></td>
+  <td class="col-md-4"><%= link_to user.email, user %></td>
+</tr>

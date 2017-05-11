@@ -12,7 +12,7 @@ class Result < ApplicationRecord
   end
 
   def count_true_answer
-    self.word.answers.where(is_correct: "t").count
+    self.word.answers.where(is_correct: "true").count
   end
 
   def check_answer

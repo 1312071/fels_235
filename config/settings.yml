@@ -5,6 +5,8 @@ user:
   password_reset_time_expired: 2
   param_pages_users: 20
   avatar: 50
+  per_page: 20
+  small_avatar: 30
 gravatar:
   gravatar_size: 80
   gravatar_micropost_size: 50
@@ -23,9 +25,8 @@ lesson:
 result:
   single_answer: 1
 word:
-  picture_size: 150
+  picture_size: 100
   per_page: 20
-  picture_size: 200
   max_length_content: 200
 answer_count: 0
 answer_quanlity: 2
@@ -38,3 +39,12 @@ filter_words:
 lesson:
   lesson_per_page: 10
   word_per_lesson: 10
+feed:
+  per_page: 20
+follower:
+  per_page: 20
+following:
+  per_page: 20
+activity:
+  per_page: 20
+  size: 20

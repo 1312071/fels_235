@@ -18,7 +18,7 @@ class Word < ApplicationRecord
     FROM results as r INNER JOIN lessons as l
     ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
 
-  RESULT_QUERY = "content like :search and id IN ( SELECT r.word_id
+  RESULT_QUERY = "content like :search and id IN (SELECT r.word_id
     FROM results r INNER JOIN answers a
     ON r.answer_id = a.id WHERE lesson_id IN (SELECT id FROM lessons
     WHERE user_id = :user_id) and a.is_correct = :is_correct)"
@@ -26,7 +26,7 @@ class Word < ApplicationRecord
   scope :recent, ->{order "created_at DESC"}
   scope :random, ->{order "RANDOM()"}
 
-  scope :get_all, -> search {where "content LIKE ?", "%#{search}%"}
+  scope :get_all, -> user_id, search {where "content LIKE ?", "%#{search}%"}
 
   scope :filter_category, ->category_id do
     where category_id: category_id if category_id.present?
@@ -56,11 +56,11 @@ class Word < ApplicationRecord
 
   def find_answer
     Word.eager_load(:answers)
-      .where("answers.is_correct =\"t\" and answers.word_id = ?", self.id)
+      .where("answers.is_correct = ?", true).where("answers.word_id = ?", self.id)
   end
 
   def count_true_answer_for_word
-    self.answers.where(is_correct: "t").count
+    self.answers.where(is_correct: :true).count
   end
 
   private

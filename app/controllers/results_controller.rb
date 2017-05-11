@@ -4,7 +4,7 @@ class ResultsController < ApplicationController
 
   def index
     @results = Result.where(lesson_id: params[:lesson_id])
-      .group(:word_id).order id: :asc
+      .group(:word_id, :id).order id: :asc
   end
 
   def edit

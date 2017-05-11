@@ -8,5 +8,16 @@ class WordsController < ApplicationController
       .includes(:category).order(:created_at).filter_category(params[:category_id])
       .send(params[:condition], current_user.id, params[:search_word])
       .page(params[:page]).per Settings.word.per_page
+
+      respond_to do |format|
+      format.js
+      format.html
+      format.pdf do
+        pdf = WordPdf.new @words
+        send_data pdf.render,
+          filename: "Word_List-#{Time.now.strftime t("pdf.time_default")}.pdf",
+          type: "application/pdf", disposition: "inline"
+      end
+    end
   end
 end

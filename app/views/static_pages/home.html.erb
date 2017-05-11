@@ -1,67 +1,79 @@
-<div class="center jumbotron">
-  <h1><%= t ".welcome" %></h1>
-  <h2>
-    <%= t ".homepage_info" %>
-    <%= t ".app_name" %>
-  </h2>
-  <%= link_to t(".sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+<% if logged_in? %>
+   <div class="row">
+     <aside class="col-md-4">
+      <section class="user-info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="stats">
+        <%= render "shared/stats", user: current_user %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h1><%= t ".welcome" %></h1>
+    <h2>
+      <%= t ".homepage_info" %>
+      <%= t ".app_name" %>
+    </h2>
+    <%= link_to t(".sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
+   </div>
 
-<div class="container-fluid">
-  <h2><%= t ".our_values" %></h2>
-  <div class="row">
-    <div class="col-sm-4">
-      <%= image_tag "framgia.png", alt: t(".framgia_logo") %>
-    </div>
-    <div class="col-sm-8">
-      <h4><%= t ".mission" %></h4>
-      <h4><%= t ".vision" %></h4>
+  <div class="container-fluid">
+    <h2><%= t ".our_values" %></h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <%= image_tag "framgia.png", alt: t(".framgia_logo") %>
+      </div>
+      <div class="col-sm-8">
+        <h4><%= t ".mission" %></h4>
+        <h4><%= t ".vision" %></h4>
+      </div>
     </div>
   </div>
-</div>
-
-<div id="services" class="container-fluid bg-grey text-center">
-  <h2><%= t ".services" %></h2>
-  <h4><%= t ".services_details" %></h4>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-book logo-small"></span>
-      <h4><%= t ".any_language" %></h4>
-      <p><%= t ".any_language_details" %></p>
+    <div id="services" class="container-fluid bg-grey text-center">
+    <h2><%= t ".services" %></h2>
+    <h4><%= t ".services_details" %></h4>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-book logo-small"></span>
+        <h4><%= t ".any_language" %></h4>
+        <p><%= t ".any_language_details" %></p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-heart logo-small"></span>
+        <h4><%= t ".learn_anything" %></h4>
+        <p><%= t ".learn_anything_details" %></p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-certificate logo-small"></span>
+        <h4><%= t ".certified" %></h4>
+        <p><%= t ".certified_details" %></p>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4><%= t ".learn_anything" %></h4>
-      <p><%= t ".learn_anything_details" %></p>
+    <div class="row slideanim">
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-time logo-small"></span>
+        <h4><%= t ".time" %></h4>
+        <p><%= t ".time_details" %></p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-education logo-small"></span>
+        <h4><%= t ".education" %></h4>
+        <p> <%= t ".education_details" %></p>
+      </div>
+      <div class="col-sm-4">
+        <span class="glyphicon glyphicon-wrench logo-small"></span>
+        <h4><%= t ".hard_work" %></h4>
+        <p> <%= t ".hard_work_details" %></p>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4><%= t ".certified" %></h4>
-      <p><%= t ".certified_details" %></p>
-    </div>
+    <i class="fa fa-chevron-down"></i>
   </div>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-time logo-small"></span>
-      <h4><%= t ".time" %></h4>
-      <p><%= t ".time_details" %></p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-education logo-small"></span>
-      <h4><%= t ".education" %></h4>
-      <p> <%= t ".education_details" %></p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4><%= t ".hard_work" %></h4>
-      <p> <%= t ".hard_work_details" %></p>
-    </div>
-  </div>
-  <i class="fa fa-chevron-down"></i>
-</div>
 
-<div class="container-fluid">
-  <h2><%= t ".introduction" %></h2>
-  <%= image_tag "intro.jpeg", alt: t(".intro_logo"),
-    class: "img-responsive center-block" %>
-</div>
+  <div class="container-fluid">
+    <h2><%= t ".introduction" %></h2>
+    <%= image_tag "intro.jpeg", alt: t(".intro_logo"),
+      class: "img-responsive center-block" %>
+  </div>
+<% end %>

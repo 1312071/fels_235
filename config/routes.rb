@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users, concerns: :paginatable
     resources :categories
+    resources :words, only: [:index, :show]
   end
   get "/faq", to: "static_pages#help"
   get "/signup", to: "users#new"
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :results, only: [:index, :edit, :update]
   end
+  resources :relationships, only: [:create, :destroy, :show]
 end
