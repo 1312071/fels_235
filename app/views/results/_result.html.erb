@@ -1,0 +1,14 @@
+<tr>
+  <th scope="row"><%= result.current_result_stt %></th>
+  <td>
+    <% if result.check_answer %>
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    <% else %>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <% end %>
+  </td>
+  <td><%= result.word.content %></td>
+  <td>
+    <%= print_answer_content result %>
+  </td>
+</tr>

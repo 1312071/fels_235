@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to lesson.category.name,
+    lesson_results_path(lesson_id: lesson.id) %></td>
+  <td><%= lesson.point %></td>
+  <td>
+    <%= lesson.created_at.strftime t("lessons.index.time_default") %>
+  </td>
+</tr>

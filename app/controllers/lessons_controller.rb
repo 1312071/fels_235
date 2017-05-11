@@ -1,9 +1,14 @@
 class LessonsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :show, :create]
+  before_action :logged_in_user, only: [:index, :new, :show, :create]
   before_action :load_lesson, only: [:show, :check_user_for_lesson,
     :verify_lesson_finished]
   before_action :verify_lesson_finished, :check_user_for_lesson, only: :show
-  before_action :check_lesson_limit, only: :create
+
+  def index
+    @lessons = current_user.lessons.includes(:category).search(params[:Category])
+      .order(created_at: :desc).page(params[:page])
+      .per Settings.lesson.lesson_per_page
+  end
 
   def new
   end
@@ -44,14 +49,6 @@ class LessonsController < ApplicationController
   def verify_lesson_finished
     if @lesson.is_finish?
       flash[:danger] = t "lessons.verify_lesson_finished.lesson_finished"
-      redirect_to categories_url
-    end
-  end
-
-  def check_lesson_limit
-    if Lesson.where(category_id: params[:lesson][:category_id]).count ==
-        Settings.lesson.limit_lesson
-      flash[:danger] = t "lessons.check_lesson_limit.over_limit"
       redirect_to categories_url
     end
   end

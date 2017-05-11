@@ -35,3 +35,6 @@ filter_words:
   learned_correct: "learned_correct"
   learned_not_correct: "learned_not_correct"
   get_all: "get_all"
+lesson:
+  lesson_per_page: 10
+  word_per_lesson: 10
