@@ -193,6 +193,23 @@ en:
         show: "show"
         edit: "edit"
         delete: "delete"
+      edit:
+        title: "Edit Word"
+      form:
+        save: "Save"
+        content: "Content"
+        answers: "Answers"
+      answer_fields:
+        correct: "Correct"
+      message:
+        update_success: "Update word successfully"
+        delete_success: "Delete word successfully"
+      error:
+        update_fail: "Fail to update word"
+        delete_fail: "Fail to delete word"
+        delete_learned_word: "This word is learned by user"
+        answer_not_less_2: "Answer not less than 2"
+        answer_not_more_4: "Answer not more than 4"
 
     categories:
       title: "Manage Categories"

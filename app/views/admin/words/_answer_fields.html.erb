@@ -1,0 +1,15 @@
+<div class="form-group answer_field">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.text_field :content, class: "form-control content-answer",
+        required: true %>
+    </div>
+    <div class="col-sm-3">
+      <%= f.label :is_correct, t(".correct") %>
+      <%= f.check_box :is_correct, class: "radio_answer" %>
+    </div>
+    <div class="col-sm-3">
+      <%= link_to_remove_fields "", f %>
+    </div>
+  </div>
+</div>
