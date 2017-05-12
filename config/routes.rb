@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :users, concerns: :paginatable
     resources :categories
-    resources :words, only: :show
+    resources :words, only: [:show, :edit]
   end
   get "/faq", to: "static_pages#help"
   get "/signup", to: "users#new"

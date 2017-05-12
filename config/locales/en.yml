@@ -234,6 +234,15 @@ en:
         invalid_category: "Invalid category"
         log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
+    words:
+      title: "Manage Words"
+      index:
+        stt: "No."
+        category: "Category"
+        content: "Word content"
+        answers: "Answers"
+        filter: "Filter"
+        search: "Search"
   category:
     alert:
       maximum_size: "Maximum file size is 5MB. Please choose a smaller file."
