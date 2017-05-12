@@ -19,7 +19,7 @@
       <td>
         <% if current_user.is_admin? && !user.current_user?(current_user) &&
           !user.is_admin %>
-          <%= link_to t(".delete"), user, method: :delete,
+          <%= link_to t(".delete"), admin_user_path(user), method: :delete,
             data: {confirm: t("users.popup.you_sure")} %>
         <% end %>
       </td>

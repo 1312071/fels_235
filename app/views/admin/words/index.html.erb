@@ -15,17 +15,34 @@
           params[:category_id]), include_blank: t("all"),
           class: "form-control form-small" %>
       </div>
-    </div>
-    <div class="center">
-      <%= f.submit t(".filter"), class: "btn btn-primary" %>
+      <div class="input-group-btn search-btn col-sm-3">
+        <%= button_tag type: "submit", name: nil, class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span class="label-icon"><%= t ".search" %></span>
+        <% end %>
+      </div>
     </div>
   <% end %>
+</div>
+<div class="well well-small">
+  <div class="pull-right">
+    <%= link_to new_admin_word_path, class: "btn btn-primary" do %>
+      <span class="fa fa-plus" aria-hidden="true"></span>
+      <span class="label-icon"><%= t ".add" %></span>
+    <% end %>
+  </div>
+  <div>
+    <%= page_entries_info @words %>
+  </div>
 </div>
 <table class="table">
   <tr>
     <th><%= t ".index" %></th>
     <th><%= t ".content" %></th>
     <th><%= t ".category" %></th>
+    <th><%= t ".info" %></th>
+    <th><%= t ".edit" %></th>
+    <th><%= t ".delete" %></th>
   </tr>
   <tbody id="result">
     <%= render @words %>

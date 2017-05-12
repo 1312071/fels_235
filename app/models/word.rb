@@ -70,6 +70,9 @@ class Word < ApplicationRecord
     if answers.select{|answer| !answer._destroy}.count < Settings.answer_quanlity
       errors.add :answers, I18n.t("word.answer_quanlity_error")
     end
+    if answers.select{|answer| answer.is_correct?}.count >= Settings.max_answer_quanlity
+      errors.add :answers, I18n.t("word.warning_answer_limit")
+    end
     if answers.detect{|answer| answer.is_correct? && !answer._destroy}.nil?
       errors.add :answers, I18n.t("word.must_has_correct_answer_error")
     end

@@ -15,11 +15,14 @@
           params[:category_id]), include_blank: t("all"),
           class: "form-control form-small" %>
       </div>
+      <div class="input-group-btn search-btn col-sm-3">
+        <%= button_tag type: "submit", name: nil, class: "btn btn-primary" do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span class="label-icon"><%= t ".filter" %></span>
+        <% end %>
+      </div>
     </div>
     <div class="row center"><%= render "filter_form" %></div>
-    <div class="center">
-      <%= f.submit t(".filter"), class: "btn btn-primary" %>
-    </div>
   <% end %>
 </div>
 <div class="well well-small">

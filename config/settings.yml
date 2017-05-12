@@ -23,6 +23,7 @@ word:
   max_length_content: 200
 answer_count: 0
 answer_quanlity: 2
+max_answer_quanlity: 4
 filter_words:
   learned: "learned"
   not_learned: "not_learned"

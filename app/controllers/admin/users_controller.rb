@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :logged_in_user, :verify_admin
+  before_action :load_user, except: [:index, :new, :create]
 
   def index
     @users = User.search(params[:search])

@@ -183,6 +183,7 @@ en:
       error:
         get_data: "get data fail"
     words:
+      title: "Manage Words"
       show:
         word_detail: "Word Details"
         back: "Back"
@@ -202,6 +203,7 @@ en:
       answer_fields:
         correct: "Correct"
       message:
+        create_success: "Create word successfully"
         update_success: "Update word successfully"
         delete_success: "Delete word successfully"
       error:
@@ -210,6 +212,22 @@ en:
         delete_learned_word: "This word is learned by user"
         answer_not_less_2: "Answer not less than 2"
         answer_not_more_4: "Answer not more than 4"
+
+      form:
+        save: "Save"
+      new:
+        add_word: "Add word"
+      index:
+        index: "No."
+        category: "Category"
+        content: "Word content"
+        answers: "Answers"
+        filter: "Filter"
+        search: "Search"
+        info: "Info"
+        edit: "Edit"
+        delete: "Delete"
+        add: "Add"
 
     categories:
       title: "Manage Categories"
@@ -251,15 +269,7 @@ en:
         invalid_category: "Invalid category"
         log_in: "Please log in."
         admin_required: "Please log in with admin privilege"
-    words:
-      title: "Manage Words"
-      index:
-        stt: "No."
-        category: "Category"
-        content: "Word content"
-        answers: "Answers"
-        filter: "Filter"
-        search: "Search"
+
   category:
     alert:
       maximum_size: "Maximum file size is 5MB. Please choose a smaller file."
@@ -290,10 +300,7 @@ en:
       contains: "Contains: "
       word: "word(s)"
 
-    answer_quanlity_error: "at least 2 answers"
-    warning_answer_limit: "Maximum of Answers is 6"
-    must_has_correct_answer_error: "must has correct answer"
-    get_all: "get_all"
+
   activities:
     activity:
       follow: "Follow"
@@ -319,5 +326,10 @@ en:
       created_at_desc: "Created date (newest first)"
       name_asc: "Name (a-z)"
       category_name_asc: "Category (a-z)"
+  word:
+    answer_quanlity_error: "at least 2 answers"
+    warning_answer_limit: "Maximum of Answers is 4"
+    must_has_correct_answer_error: "must has correct answer"
+    get_all: "get_all"
   pdf:
     time_default: "%m/%d/%Y-%H:%M"
