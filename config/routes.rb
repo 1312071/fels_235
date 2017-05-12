@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
-  resources :users, concerns: :paginatable
   resources :words, only: :index
   namespace :admin do
     root "dashboard#index"
@@ -17,5 +16,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :categories, only: :index
-  resources :words
+  resources :users, concerns: :paginatable
+  resources :relationships, only: [:create, :destroy, :show]
 end

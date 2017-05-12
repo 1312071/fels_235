@@ -265,3 +265,46 @@ input, textarea, .uneditable-input {
     height: 205px !important;
   }
 }
+
+.stats {
+  a {
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    float: left;
+    padding: 0 10px;
+
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+    &:hover {
+      color: blue;
+      text-decoration: none;
+    }
+  }
+  margin-top: 0;
+  overflow: auto;
+  padding: 0;
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  a {
+    padding: 0;
+  }
+  margin-top: 10px;
+  overflow: auto;
+  .gravatar {
+    margin: 1px;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+.bold-micropost{
+  text-decoration: bold;
+}

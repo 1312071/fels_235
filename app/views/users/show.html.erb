@@ -1,11 +1,16 @@
 <% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user-info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+<% if logged_in? %>
+  <section class="container-fluid">
+    <div class="row">
+      <aside class="col-md-3">
+        <section class="user_info">
+          <%= render "shared/user_info" %>
+        </section>
+        <section class="stats">
+          <%= render "shared/stats", user: @user %>
+        </section>
+        <%= render "follow_form" %>
+      </aside>
+    </div>
+  </section>
+<% end %>
