@@ -1,11 +1,11 @@
 <% @user ||= current_user %>
 <div class="stats">
   <strong>
-    <%= link_to pluralize(user.following.count,
-      t(".followings")), relationship_path(user, query: :following) %>
+    <%= link_to pluralize(@user.following.count,
+      t(".followings")), relationship_path(@user, query: :following) %>
   </strong>
   <strong id="followers" class="stat">
-    <%= link_to pluralize(user.followers.count,
-      t(".followers")), relationship_path(user, query: :followers) %>
+    <%= link_to pluralize(@user.followers.count,
+      t(".followers")), relationship_path(@user, query: :followers) %>
   </strong>
 </div>

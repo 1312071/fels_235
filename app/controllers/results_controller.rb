@@ -34,6 +34,8 @@ class ResultsController < ApplicationController
         @result = Result.result_next @result.id, @result.word_id
       end
       @lesson.update_point @point
+      @lesson.activities.create user_id: @lesson.user_id,
+        action_type: Activity.actions[:finish_lesson]
     end
   end
 

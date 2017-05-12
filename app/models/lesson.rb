@@ -4,6 +4,7 @@ class Lesson < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :words, through: :results
 
+  has_many :activities, as: :target
   after_save :create_result_for_lesson
 
   def current_result
@@ -22,6 +23,10 @@ class Lesson < ApplicationRecord
     else
       false
     end
+  end
+
+  def number_correct_answer
+    results.correct.count
   end
 
   private
@@ -44,5 +49,4 @@ class Lesson < ApplicationRecord
       end
     end
   end
-
 end

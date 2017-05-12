@@ -7,6 +7,10 @@ class Result < ApplicationRecord
 
   scope :result_next, ->id, word_id{where("id > #{id} AND word_id <> #{word_id}").first}
 
+  QUERY = "INNER JOIN answers ON results.word_id =
+    answers.word_id AND results.answer_id = answers.id"
+  scope :correct, -> {joins(QUERY).merge(Answer.correct)}
+
   def current_result_index
     Result.select(:word_id)
       .where("lesson_id = #{self.lesson_id} AND id <= #{self.id}")

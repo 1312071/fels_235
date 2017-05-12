@@ -138,6 +138,7 @@ en:
       admin_required: "Please log in with admin privilege"
       create_follow: "Can not create this followed user"
       destroy_follow: "Can not destroy this followed user"
+      create_activity: "Can not create activity for this user"
     follow:
       follow: "Follow"
     unfollow:
@@ -305,6 +306,10 @@ en:
     activity:
       follow: "Follow"
       unfollow: "Unfollow"
+      start_lesson: "Start lesson"
+      result: "result"
+      category: "category"
+      finish_lesson: "Finish lesson"
       ago: "ago"
   words:
     index:
