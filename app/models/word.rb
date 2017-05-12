@@ -2,6 +2,7 @@ class Word < ApplicationRecord
   belongs_to :category
   has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
+
   validates :content, presence: true,
     length: {maximum: Settings.word.max_length_content}
   validate :validates_answers
@@ -17,7 +18,7 @@ class Word < ApplicationRecord
     FROM results as r INNER JOIN lessons as l
     ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
 
-  RESULT_QUERY = "content like :search and id IN ( SELECT r.word_id
+  RESULT_QUERY = "content like :search and id IN (SELECT r.word_id
     FROM results r INNER JOIN answers a
     ON r.answer_id = a.id WHERE lesson_id IN (SELECT id FROM lessons
     WHERE user_id = :user_id) and a.is_correct = :is_correct)"
@@ -26,7 +27,6 @@ class Word < ApplicationRecord
   scope :random, ->{order "RANDOM()"}
 
   scope :get_all, -> search {where "content LIKE ?", "%#{search}%"}
-
   scope :filter_category, ->category_id do
     where category_id: category_id if category_id.present?
   end

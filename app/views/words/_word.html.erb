@@ -13,10 +13,7 @@
   <td class="category">
     <%= word.category.name %>
   </td>
-  <td>
-    <%= image_tag word.picture.url,
-      size: Settings.word.picture_size %>
-  </td>
+  <td><%= image_tag word.picture.url, size: Settings.word.picture_size %></td>
   <td class="created_at">
     <%= word.created_at.to_date.to_s :long %>
   </td>

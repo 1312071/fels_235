@@ -7,6 +7,9 @@
           <%= link_to t("layouts.header.categories"), categories_path %>
         </li>
         <% if logged_in? %>
+          <li>
+            <%= link_to t("layouts.header.words"), words_path %>
+          </li>
           <% if current_user.is_admin? %>
             <%= render "layouts/admin_header" %>
           <% end %>
