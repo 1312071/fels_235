@@ -28,16 +28,16 @@ class Word < ApplicationRecord
   scope :recent, ->{order "created_at DESC"}
   scope :random, ->{order "RANDOM()"}
 
-  scope :get_all, -> search {where "content LIKE ?", "%#{search}%"}
+  scope :get_all, ->search {where "content LIKE ?", "%#{search}%"}
   scope :filter_category, ->category_id do
     where category_id: category_id if category_id.present?
   end
 
-  scope :learned, -> user_id, search do
+  scope :learned, ->user_id, search do
     where LEARNT_QUERY, user_id: user_id, search: "%#{search}%"
   end
 
-  scope :not_learned, -> user_id, search do
+  scope :not_learned, ->user_id, search do
     where NOT_YET_QUERY, user_id: user_id, search: "%#{search}%"
   end
 

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :verify_admin, only: :destroy
 
   def show
+    @activities = Activity.user_activity(@user.id).limit Settings.activity.size
   end
 
   def new

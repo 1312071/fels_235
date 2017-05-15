@@ -1,0 +1,28 @@
+<% if obj = activity.target_object %>
+  <li>
+    <span>
+      <%= activity.user.name %>
+      <% case activity.action_type %>
+        <% when Activity.actions[:follow] %>
+          <%= t ".follow" %>
+          <%= link_to obj.name, user_path(activity.target_id) %>
+        <% when Activity.actions[:unfollow] %>
+          <%= t ".unfollow" %>
+          <%= link_to obj.name, user_path(activity.target_id) %>
+        <% when Activity.actions[:start_lesson] %>
+          <%= t ".start_lesson", id: activity.target_id %>
+          <%= t ".category" %>
+          <%= obj.category.name %>
+        <% when Activity.actions[:finish_lesson] %>
+          <%= t ".finish_lesson", id: activity.target_id %>
+          <%= t ".result" %>
+          <%= obj.number_correct_answer.to_s + " / " + Settings.lesson.word_per_lesson.to_s %>
+      <% end %>
+    </span>
+    <span>
+      <%= time_ago_in_words activity.created_at %>
+      <%= t ".ago" %>
+      (<%= activity.created_at.localtime.to_formatted_s :long %>)
+    </span>
+  </li>
+<% end %>

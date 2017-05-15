@@ -15,7 +15,9 @@ class LessonsController < ApplicationController
       @lesson = current_user.lessons.build category_id: params[:lesson][:category_id]
       if @lesson.check_word_for_lesson
         if @lesson.save!
-          redirect_to lesson_url @lesson
+        @lesson.activities.create user_id: @lesson.user_id,
+          action_type: Activity.actions[:start_lesson]
+        redirect_to lesson_url @lesson
         else
           flash[:danger] = t "lessons.create.start_lesson_failed"
           redirect_to categories_url

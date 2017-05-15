@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration[5.0]
       t.integer :target_id
       t.references :user, foreign_key: true
       t.integer :action_type
-
+      t.string :target_type
       t.timestamps
     end
     add_index :activities, [:user_id, :created_at]
