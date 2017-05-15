@@ -253,13 +253,14 @@ input, textarea, .uneditable-input {
 .checkbox {
   margin-top: -10px;
   span{
-    margin-left: 20px;
     font-weight: normal;
+    margin-left: 20px;
   }
 }
 
 .thumbnail {
-  height: 350px !important;
+  height: 365px !important;
+  padding-top: 20px;
   img {
     height: 205px !important;
   }
@@ -307,4 +308,10 @@ input, textarea, .uneditable-input {
 
 .search-btn {
   padding: 25px;
+}
+
+.radio {
+  input {
+    width: auto !important;
+  }
 }

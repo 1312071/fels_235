@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
   include UsersHelper
+  include ResultsHelper
 
   helper_method :find_answer
   def logged_in_user
@@ -45,5 +46,12 @@ class ApplicationController < ActionController::Base
 
   def render_404
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+  end
+
+  def verify_admin
+    unless current_user.is_admin?
+      flash[:danger] = t "admin.categories.verify_admin.admin_required"
+      redirect_to root_url
+    end
   end
 end

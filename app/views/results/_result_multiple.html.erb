@@ -1,0 +1,16 @@
+<div id="answer">
+  <h3>
+    <%= object.lesson.category.name %>
+    <%= object.current_result_index %>/<%= Settings.lesson.word_per_lesson %>
+  </h3>
+  <h3><%= object.current_result_index %>.<%= object.word.content %></h3>
+  <%= hidden_field_tag "result_id", object.id %>
+  <% object.word.answers.each do |answer| %>
+    <div class="radio">
+      <label>
+        <%= check_box_tag "answer[]", answer.id %>
+        <%= answer.content %>
+      </label>
+    </div>
+  <% end %>
+</div>

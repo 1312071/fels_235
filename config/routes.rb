@@ -19,4 +19,8 @@ Rails.application.routes.draw do
   resources :categories, only: :index
   resources :users, concerns: :paginatable
   resources :relationships, only: [:create, :destroy, :show]
+  resources :words
+  resources :lessons do
+    resources :results, only: [:index, :edit, :update]
+  end
 end

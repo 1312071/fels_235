@@ -6,7 +6,7 @@ class Word < ApplicationRecord
   validates :content, presence: true,
     length: {maximum: Settings.word.max_length_content}
   validate :validates_answers
-  validates :content, uniqueness: true
+  validates :content, uniqueness: true, presence: true
   mount_uploader :picture, PictureUploader
   validate :picture_size
   accepts_nested_attributes_for :answers, allow_destroy: true,
@@ -60,8 +60,13 @@ class Word < ApplicationRecord
       .where("answers.is_correct =\"t\" and answers.word_id = ?", self.id)
   end
 
+
   def is_word_learned?
     Result.exists? word_id: self.id
+  end
+
+  def count_true_answer_for_word
+    answers.where(is_correct: "t").count
   end
 
   private
